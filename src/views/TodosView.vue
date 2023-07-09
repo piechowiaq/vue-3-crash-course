@@ -18,6 +18,10 @@ const createTodo = (todo) => {
 
 }
 
+const toggleTodoComplete = (todoPos) => {
+  todoList.value[todoPos].isCompleted = !todoList.value[todoPos].isCompleted
+}
+
 </script>
 
 <template>
@@ -26,7 +30,7 @@ const createTodo = (todo) => {
     <TodoCreator @create-todo="createTodo"/>
     <ul class="todo-list" v-if="todoList.length > 0">
 
-      <TodoItem v-for="todo in todoList" :todo="todo"/>
+      <TodoItem v-for="(todo, index) in todoList" :todo="todo" :index="index" @toggle-complete="toggleTodoComplete"/>
     </ul>
     <p v-else class="todos-msg">
       <Icon icon="noto-v1:sad-but-relieved-face" class="icon"  width="22" />
