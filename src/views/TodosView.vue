@@ -30,8 +30,8 @@ const updateTodo = (todoVal, todoPos ) => {
   todoList.value[todoPos].todo = todoVal
 }
 
-const deleteTodo = (todoPos) => {
-  todoList.value[todoPos]
+const deleteTodo = (todoId) => {
+  todoList.value = todoList.value.filter((todo) => todo.id !== todoId)
 }
 
 </script>

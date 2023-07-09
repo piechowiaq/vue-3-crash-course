@@ -30,7 +30,7 @@ defineEmits(["toggle-complete", "edit-todo", "update-todo", "delete-todo"]);
     <div class="todo-actions">
       <Icon icon="ph:check-circle" v-if="todo.isEditing" class="icon" color="green" width="22" @click="$emit('edit-todo', index)" />
       <Icon icon="ph:pencil-fill" v-else class="icon" color="green" width="22" @click="$emit('edit-todo', index)"/>
-      <Icon icon="ph:trash" class="icon" color="red" width="22" @click="$emit('delete-todo', index)"/>
+      <Icon icon="ph:trash" class="icon" color="red" width="22" @click="$emit('delete-todo', todo.id)"/>
     </div>
   </li>
 </template>
